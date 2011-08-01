@@ -1,0 +1,15 @@
+{
+  "name": "Spotlight",
+  "version": "0.0.1",
+  "description": "ADd Later",
+  "background_page": "background.html",
+  "permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "css": [],
+      "js": ["js/performance.js"]
+    }]
+}
