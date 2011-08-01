@@ -11,7 +11,8 @@ function aggregateData(data){
     return dataByHost;
 }
 
-var data = [{
+function getData(){
+    return [{
     "totalTimeToDomLoad":0,
     "totalDNSLookupTime":1200,
     "totalTimeToFirstResponseByte":10,
@@ -39,5 +40,6 @@ var data = [{
     "url":"http://www.google.com/hackathon2",
     "hostname":"www.google.com"
     }];
+}
 
-console.dir(aggregateData(data))
+console.dir(aggregateData(getData())[window.location.hostname])
