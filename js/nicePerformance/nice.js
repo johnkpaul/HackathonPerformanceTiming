@@ -64,7 +64,7 @@
                 NICE.callbacks[i](NICE.performance);
              }
         }
-        setTimeout(whenLoaded, 1000);
+        setTimeout(whenLoaded, 3000);
     }
 
     NICE.init();

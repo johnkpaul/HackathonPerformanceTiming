@@ -24,7 +24,6 @@
         chrome.windows.getLastFocused(function(window){
             chrome.tabs.getAllInWindow(window.id, function(tabs){
                 var currentHostname = localStorage["currentHostname"]
-                console.log(tabs);
                 var current = tabs.filter(function(tab){
                     return tab.url.indexOf(currentHostname) > -1;
                 });
