@@ -17,14 +17,16 @@
   <div id="popup-wrap">
     <p>
       <img id="faviconOfCurrentPage" src="" alt="favicon" class="favicon" />
-      <span id="domain">${site.domain}</span>
-      <span id="updated">-- ${site.updated}</span>
+      <span id="domain">${site.domain}</span> -- 
+      <span id="updated"></span>
     </p>
     <ul>
-      <li class="stat">${site.stat}</li>
-      <li class="chart"><div id="chart">${site.chart}</div></li>
+      <li class="chart"><div id="chart"></div></li>
+      <li>Total Visits to this host - <span id="hostVisits"></span></li>
+      <li>Total time to DOM load - <span id="totalTimeToDomLoad"></span>ms</li>
+      <li>Total DNS lookup time - <span id="totalDNSLookupTime"></span>ms</li>
+      <li>Total time to first response byte - <span id="totalTimeToFirstResponseByte"></span>ms</li>
     </ul>
-    <p><a href="${site.detailed}">&rarr; advanced statistics</a></p>
   </div><!--popup-wrap-->
 </body>
 
