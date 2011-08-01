@@ -1,3 +1,27 @@
 html {
   width: 400px;
 }
+
+#popup-wrap img.favicon {
+  height: 16px;
+  vertical-align: text-top;
+  width: 16px;
+}
+
+#popup-wrap span.domain {
+  font-weight: bold;
+}
+
+#popup-wrap span.updated {
+  color: #CCCCCC;
+  font-style: italic;
+}
+
+#popup-wrap ul {
+  list-style-type: none;
+}
+
+#popup-wrap a {
+  float: right;
+  text-decoration: none;
+}
