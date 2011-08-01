@@ -1,5 +1,5 @@
 html {
-  width: 400px;
+  width: 500px;
 }
 
 #popup-wrap img.favicon {
@@ -8,12 +8,13 @@ html {
   width: 16px;
 }
 
-#popup-wrap span.domain {
+#popup-wrap span#domain {
   font-weight: bold;
 }
 
-#popup-wrap span.updated {
+#popup-wrap span#updated {
   color: #CCCCCC;
+  font-size: 11pt;
   font-style: italic;
 }
 
@@ -21,9 +22,16 @@ html {
   list-style-type: none;
 }
 
+#popup-wrap ul li {
+  font-size: 11pt;
+}
 #popup-wrap ul li.chart {
   height: 100px;
-  width: 300px;
+  width: 500px;
+}
+
+#popup-wrap ul li span.stat, #popup-wrap ul li span.unit  {
+  color: #356AA0;
 }
 
 #popup-wrap a {
