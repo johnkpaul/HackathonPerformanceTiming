@@ -21,6 +21,11 @@ html {
   list-style-type: none;
 }
 
+#popup-wrap ul li.chart {
+  height: 100px;
+  width: 300px;
+}
+
 #popup-wrap a {
   float: right;
   text-decoration: none;
