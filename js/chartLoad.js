@@ -14,7 +14,7 @@ function drawChart(chartData) {
     }
 
     var chart = new google.visualization.LineChart(document.getElementById(chartData.divId));
-    chart.draw(data, {width: 500, height: 100, title: chartData.title,
+    chart.draw(data, {width: 500, height: 100, title: chartData.title, legend: "none",
                       //vAxis: {title: 'Page Load Time(ms)', titleTextStyle: {color: 'blue'}},
                       hAxis: {title: chartData.xIdentifier, titleTextStyle: {color: 'red'}}
                      });
@@ -38,7 +38,7 @@ function colChartData(xIdentifier, yIdentifier, title, xVals, yVals,divId)
 var xVals = ['google.com','amazon.com','ebay.com','facebook.com']
 var yVals = [100,500,600,1400]
 
-var data = new colChartData('URI','Page Load Time (ms)', 'Performance by URI', xVals, yVals,"chart_div")
+var data = new colChartData('URI','Page Load Time (ms)', 'URI historical performance', xVals, yVals,"chart_div")
 //drawChart(data)
 //drawChart(new colChartData('URI','Load Time','Performance by Domain', ['foobar','barfoo'], [2,3],"chart2_div"))
 

@@ -59,5 +59,5 @@ for(var i=0; i<dataForHost.length; i++){
     yVals[i] = dataForHost[i]["totalTimeToDomLoad"];
 }
 
-var data = new colChartData('URL','Page Load Time (ms)', 'Performance by URL', xVals, yVals,"chart");
+var data = new colChartData('URL','Page Load Time (ms)', 'hostname historical performance', xVals, yVals,"chart");
 createChart(data);

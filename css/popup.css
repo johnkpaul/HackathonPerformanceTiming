@@ -19,7 +19,7 @@ html {
 }
 
 #popup-wrap ul {
-  list-style-type: none;
+  list-style-type: square;
 }
 
 #popup-wrap ul li {
