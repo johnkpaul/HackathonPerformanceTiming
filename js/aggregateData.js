@@ -1,5 +1,6 @@
 function aggregateData(data){
     var dataByHost = {};
+    data = data.reverse; //need to reverse to sort by date ascending
     for(var i=0; i<data.length; i++)
     {
         var hostName = data[i]['hostname'];
@@ -12,34 +13,35 @@ function aggregateData(data){
 }
 
 function getData(){
-    return [{
-    "totalTimeToDomLoad":50,
-    "totalDNSLookupTime":1200,
-    "totalTimeToFirstResponseByte":10,
-    "url":"http://www.theladders.com/guestjobsearch",
-    "hostname":"www.theladders.com"
-    },
-    {
-    "totalTimeToDomLoad":100,
-    "totalDNSLookupTime":1200,
-    "totalTimeToFirstResponseByte":10,
-    "url":"http://www.theladders.com/guestjobsearch2",
-    "hostname":"www.theladders.com"
-    },
-    {
-    "totalTimeToDomLoad":0,
-    "totalDNSLookupTime":1200,
-    "totalTimeToFirstResponseByte":10,
-    "url":"http://www.google.com/hackathon",
-    "hostname":"www.google.com"
-    },
-    {
-    "totalTimeToDomLoad":0,
-    "totalDNSLookupTime":1200,
-    "totalTimeToFirstResponseByte":10,
-    "url":"http://www.google.com/hackathon2",
-    "hostname":"www.google.com"
-    }];
+    return JSON.parse(localStorage["currentPerformance"]);
+//    return [{
+//    "totalTimeToDomLoad":50,
+//    "totalDNSLookupTime":1200,
+//    "totalTimeToFirstResponseByte":10,
+//    "url":"http://www.theladders.com/guestjobsearch",
+//    "hostname":"www.theladders.com"
+//    },
+//    {
+//    "totalTimeToDomLoad":100,
+//    "totalDNSLookupTime":1200,
+//    "totalTimeToFirstResponseByte":10,
+//    "url":"http://www.theladders.com/guestjobsearch2",
+//    "hostname":"www.theladders.com"
+//    },
+//    {
+//    "totalTimeToDomLoad":0,
+//    "totalDNSLookupTime":1200,
+//    "totalTimeToFirstResponseByte":10,
+//    "url":"http://www.google.com/hackathon",
+//    "hostname":"www.google.com"
+//    },
+//    {
+//    "totalTimeToDomLoad":0,
+//    "totalDNSLookupTime":1200,
+//    "totalTimeToFirstResponseByte":10,
+//    "url":"http://www.google.com/hackathon2",
+//    "hostname":"www.google.com"
+//    }];
 }
 
 var dataForHost = aggregateData(getData())[localStorage["currentHostname"]]
