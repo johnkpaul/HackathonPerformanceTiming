@@ -1,7 +1,7 @@
 <html>
   <script>
       function addToStore(performance){
-        var currentPerformance = localStorage["currentPerformance"];
+        var currentPerformance = JSON.parse(localStorage["currentPerformance"]);
         if(currentPerformance == null){
            localStorage["currentPerformance"] = JSON.stringify([performance]);
         }
@@ -18,6 +18,19 @@
                addToStore(performanceObject);
             }
       });
+
+      function getCurrentFavicon(){
+        chrome.windows.getLastFocused(function(window){
+            chrome.tabs.getAllInWindow(window.id, function(tabs){
+                var currentHostname = localStorage["currentHostname"]
+                console.log(tabs);
+                var current = tabs.filter(function(tab){
+                    return tab.url.indexOf(currentHostname) > -1;
+                });
+                var favicon = current[0].favIconUrl;
+            })
+        });
+      }
   </script>
 </html>
 
