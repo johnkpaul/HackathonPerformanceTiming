@@ -1,6 +1,6 @@
 function aggregateData(data){
     var dataByHost = {};
-    data = data.reverse; //need to reverse to sort by date ascending
+    data.reverse; //need to reverse to sort by date ascending
     for(var i=0; i<data.length; i++)
     {
         var hostName = data[i]['hostname'];
@@ -19,14 +19,16 @@ function getData(){
 //    "totalDNSLookupTime":1200,
 //    "totalTimeToFirstResponseByte":10,
 //    "url":"http://www.theladders.com/guestjobsearch",
-//    "hostname":"www.theladders.com"
+//    "hostname":"www.theladders.com",
+//    "visitTime":"yesterday"
 //    },
 //    {
 //    "totalTimeToDomLoad":100,
 //    "totalDNSLookupTime":1200,
 //    "totalTimeToFirstResponseByte":10,
 //    "url":"http://www.theladders.com/guestjobsearch2",
-//    "hostname":"www.theladders.com"
+//    "hostname":"www.theladders.com",
+//    "visitTime":"yesterday"
 //    },
 //    {
 //    "totalTimeToDomLoad":0,
@@ -44,7 +46,9 @@ function getData(){
 //    }];
 }
 
-var dataForHost = aggregateData(getData())[localStorage["currentHostname"]]
+var aData = aggregateData(getData())
+console.dir(aData)
+var dataForHost = aData[localStorage["currentHostname"]]
 console.dir(dataForHost);
 
 var xVals = [];
