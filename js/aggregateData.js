@@ -42,4 +42,4 @@ function getData(){
     }];
 }
 
-console.dir(aggregateData(getData())[window.location.hostname])
+console.dir(aggregateData(getData())[localStorage["currentHostname"]])
