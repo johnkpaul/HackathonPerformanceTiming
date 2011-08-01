@@ -1,14 +1,14 @@
 <html>
   <script>
       function addToStore(performance){
+        try{
         var currentPerformance = JSON.parse(localStorage["currentPerformance"]);
-        if(currentPerformance == null){
-           localStorage["currentPerformance"] = JSON.stringify([performance]);
-        }
-        else{
-            currentPerformance.push(performance);
-            localStorage["currentPerformance"] = JSON.stringify(performance);
-        }
+      }
+      catch(e){
+             currentPerformance = []
+      }
+        currentPerformance.push(performance);
+        localStorage["currentPerformance"] = JSON.stringify(currentPerformance);
       }
 
       chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
