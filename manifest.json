@@ -4,6 +4,8 @@
   "description": "Track performance statistics of websites",
   "background_page": "background.html",
   "permissions": [
+    "tabs",
+    "window",
     "*://*/*"
   ],
   "browser_action": {
@@ -15,7 +17,7 @@
     {
       "matches": ["*://*/*"],
       "css": [],
-      "js": ["js/performance.js"],
+      "js": ["js/nicePerformance/nice.js","js/performance.js"],
       "run_at":"document_end"
     }]
 }
