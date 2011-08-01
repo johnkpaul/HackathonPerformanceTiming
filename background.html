@@ -16,6 +16,7 @@
                var performanceObject = request.performance;
                localStorage["currentHostname"] = performanceObject.hostname;
                addToStore(performanceObject);
+                getCurrentFavicon();
             }
       });
 
