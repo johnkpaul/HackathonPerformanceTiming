@@ -13,7 +13,7 @@ function drawChart(chartData) {
         data.setValue(i,1,chartData.yVals[i])
     }
 
-    var chart = new google.visualization.ColumnChart(document.getElementById(chartData.divId));
+    var chart = new google.visualization.LineChart(document.getElementById(chartData.divId));
     chart.draw(data, {width: 800, height: 480, title: chartData.title,
                       //vAxis: {title: 'Page Load Time(ms)', titleTextStyle: {color: 'blue'}},
                       hAxis: {title: chartData.xIdentifier, titleTextStyle: {color: 'red'}}
