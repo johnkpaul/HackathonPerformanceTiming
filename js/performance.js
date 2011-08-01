@@ -4,16 +4,11 @@
         global.TURBINE = {}
     }
 
-    TURBINE.injectJavascript = function(url){
-        var scriptTag = document.createElement("script");
-        scriptTag.src = url;
-        (document.head || document.body || document.documentElement).appendChild(scriptTag);
-    }
+    NICE.addPerformanceCallback(function(performance){
+        var performanceObject = performance.toObject();
+        performanceObject["hostname"] = window.location.hostname;
+        performanceObject["url"] = window.location.href;
 
-    TURBINE.init = function(){
-        var url = chrome.extension.getURL("js/nicePerformance/nice.js");
-        TURBINE.injectJavascript(url);
-    }
-
-    TURBINE.init();
+        chrome.extension.sendRequest({isPerformanceObject: true, performance:performanceObject});
+    });
 })(window);

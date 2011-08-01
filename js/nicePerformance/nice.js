@@ -70,7 +70,5 @@
     NICE.init();
 })(window);
 
-NICE.addPerformanceCallback(function(performance){
-    console.log(performance.toObject());
-})
+
 

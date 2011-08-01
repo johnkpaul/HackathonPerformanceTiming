@@ -1,0 +1,29 @@
+<html>
+  <script>
+      function addToStore(performance){
+        var currentPerformance = localStorage["currentPerformance"];
+        if(currentPerformance == null){
+           localStorage["currentPerformance"] = JSON.stringify([performance]);
+        }
+        else{
+            currentPerformance.push(performance);
+            localStorage["currentPerformance"] = JSON.stringify(performance);
+        }
+      }
+
+      chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+            if(request.isPerformanceObject){
+               var performanceObject = request.performance;
+               localStorage["currentHostname"] = performanceObject.hostname;
+               addToStore(performanceObject);
+            }
+      });
+  </script>
+</html>
+
+<html>
+
+  <body>
+
+  </body>
+</html>
