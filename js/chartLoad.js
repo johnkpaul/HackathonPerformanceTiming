@@ -20,9 +20,9 @@ function drawChart(chartData) {
                      });
 }
 
-function createChart(){
+function createChart(data){
     google.load("visualization", "1", {packages:["corechart"]});
-    google.setOnLoadCallback(afterChartApiLoaded);
+    google.setOnLoadCallback(drawChartFunction(data));
 }
 
 function colChartData(xIdentifier, yIdentifier, title, xVals, yVals,divId)
@@ -35,14 +35,11 @@ function colChartData(xIdentifier, yIdentifier, title, xVals, yVals,divId)
     this.divId = divId;
 }
 
-function afterChartApiLoaded()
-{
-    var xVals = ['google.com','amazon.com','ebay.com','facebook.com']
-    var yVals = [100,500,600,1400]
+var xVals = ['google.com','amazon.com','ebay.com','facebook.com']
+var yVals = [100,500,600,1400]
 
-    var data = new colChartData('URI','Page Load Time (ms)', 'Performance by URI', xVals, yVals,"chart_div")
-    drawChart(data)
-    drawChart(new colChartData('URI','Load Time','Performance by Domain', ['foobar','barfoo'], [2,3],"chart2_div"))
-}
+var data = new colChartData('URI','Page Load Time (ms)', 'Performance by URI', xVals, yVals,"chart_div")
+//drawChart(data)
+//drawChart(new colChartData('URI','Load Time','Performance by Domain', ['foobar','barfoo'], [2,3],"chart2_div"))
 
-createChart();
+createChart(data);
