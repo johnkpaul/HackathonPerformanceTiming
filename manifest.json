@@ -1,11 +1,16 @@
 {
-  "name": "Spotlight",
+  "name": "Turbine",
   "version": "0.0.1",
-  "description": "ADd Later",
+  "description": "Track performance statistics of websites",
   "background_page": "background.html",
   "permissions": [
     "*://*/*"
   ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_title": "Turbine performance statistics",
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
