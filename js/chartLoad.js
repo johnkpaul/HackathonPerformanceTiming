@@ -42,4 +42,4 @@ var data = new colChartData('URI','Page Load Time (ms)', 'Performance by URI', x
 //drawChart(data)
 //drawChart(new colChartData('URI','Load Time','Performance by Domain', ['foobar','barfoo'], [2,3],"chart2_div"))
 
-createChart(data);
+//createChart(data);

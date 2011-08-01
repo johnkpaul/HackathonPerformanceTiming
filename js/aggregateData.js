@@ -13,14 +13,14 @@ function aggregateData(data){
 
 function getData(){
     return [{
-    "totalTimeToDomLoad":0,
+    "totalTimeToDomLoad":50,
     "totalDNSLookupTime":1200,
     "totalTimeToFirstResponseByte":10,
     "url":"http://www.theladders.com/guestjobsearch",
     "hostname":"www.theladders.com"
     },
     {
-    "totalTimeToDomLoad":0,
+    "totalTimeToDomLoad":100,
     "totalDNSLookupTime":1200,
     "totalTimeToFirstResponseByte":10,
     "url":"http://www.theladders.com/guestjobsearch2",
@@ -42,4 +42,16 @@ function getData(){
     }];
 }
 
-console.dir(aggregateData(getData())[localStorage["currentHostname"]])
+var dataForHost = aggregateData(getData())[localStorage["currentHostname"]]
+console.dir(dataForHost);
+
+var xVals = [];
+var yVals = [];
+
+for(var i=0; i<dataForHost.length; i++){
+    xVals[i] = dataForHost[i]["url"];
+    yVals[i] = dataForHost[i]["totalTimeToDomLoad"];
+}
+
+var data = new colChartData('URL','Page Load Time (ms)', 'Performance by URL', xVals, yVals,"fakeChartData");
+createChart(data);
