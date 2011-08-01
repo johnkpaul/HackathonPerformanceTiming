@@ -9,6 +9,7 @@
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="js/chartLoad.js"></script>
   <script type="text/javascript" src="js/aggregateData.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script>
   <title>Tubine extension</title>
 </head>
 
@@ -16,8 +17,8 @@
   <div id="popup-wrap">
     <p>
       <img src="${site.favicon}" alt="favicon" class="favicon" />
-      <span class="domain">${site.domain}</span>
-      <span class="updated">-- ${site.updated}</span>
+      <span id="domain">${site.domain}</span>
+      <span id="updated">-- ${site.updated}</span>
     </p>
     <ul>
       <li class="stat">${site.stat}</li>
