@@ -1,1 +1,6 @@
-document.getElementById("domain").innerHTML("test");
+window.addEventListener('DOMContentLoaded',setValues, false);
+
+function setValues()
+{
+    document.getElementById("domain").innerHTML = localStorage["currentHostname"];
+}
