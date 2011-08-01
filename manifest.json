@@ -10,6 +10,7 @@
     {
       "matches": ["*://*/*"],
       "css": [],
-      "js": ["js/performance.js"]
+      "js": ["js/performance.js"],
+      "run_at":"document_end"
     }]
 }
