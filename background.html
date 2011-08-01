@@ -27,7 +27,8 @@
                 var current = tabs.filter(function(tab){
                     return tab.url.indexOf(currentHostname) > -1;
                 });
-                var favicon = current[0].favIconUrl;
+                var favIconUrl = current[0].favIconUrl;
+                localStorage[currentHostname] = favIconUrl;
             })
         });
       }
